@@ -38,6 +38,8 @@ the preconditions each command needs, run it non-interactively, read the result,
    command to run in their own terminal (see [references/config.md](references/config.md)), then
    reference it as `keychain:`, `file:`, or `env:`. A store passphrase that can't be resolved is
    fixed by the user running `buildline sign setup --save-passphrase` in their terminal.
+   On a developer Mac prefer `keychain:` references: an `env:` variable the user exports in their
+   own terminal is invisible to your commands unless it is exported in their shell profile.
 4. **Ask before anything irreversible**, even when the user said "ship it" earlier. Name exactly
    what will happen and wait for a yes:
    - `submit --confirm` (App Store review / Play production release / npm `latest` move)
@@ -110,7 +112,8 @@ publish rights; scoped packages need `access: public`. See [references/npm.md](r
 On success, report what the user will look for, taken from the command's output: version and
 build number (or version code / npm version), where it went (beta groups, Play track, dist-tag),
 the artifact path for `build`, and any warning BuildLine printed (for example a hardcoded
-`versionCode` or a profile expiring soon).
+`versionCode` or a profile expiring soon). `buildline test` printing "tests passed — 0 tests"
+means the scheme has no test target: report that no tests ran, not that tests passed.
 
 On failure, find the first real error (the summary lines; full xcodebuild/altool logs are in
 `.buildline/*.log`), look it up in [references/troubleshooting.md](references/troubleshooting.md),

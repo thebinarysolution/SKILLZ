@@ -1,7 +1,7 @@
 {
   "name": "buildline",
   "displayName": "BuildLine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build, sign, and ship iOS, Android, and npm releases with the BuildLine CLI: TestFlight, App Store review, Google Play, and npm dist-tags.",
   "author": {
     "name": "The Binary Solution",
