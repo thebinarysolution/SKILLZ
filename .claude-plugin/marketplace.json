@@ -1,0 +1,15 @@
+{
+  "name": "tbs-skillz",
+  "description": "Skills for Claude Code by The Binary Solution: shipping apps, store optimization, and more.",
+  "owner": {
+    "name": "The Binary Solution",
+    "url": "https://github.com/thebinarysolution"
+  },
+  "plugins": [
+    {
+      "name": "buildline",
+      "source": "./buildline/plugin",
+      "description": "Build, sign, and ship iOS, Android, and npm releases with the BuildLine CLI: TestFlight, App Store review, Google Play, and npm dist-tags."
+    }
+  ]
+}
